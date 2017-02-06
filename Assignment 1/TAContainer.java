@@ -4,13 +4,34 @@ public abstract class TAContainer
 	
 }
 
-class TAArray extends TAContainer
+class TAArray<T> extends TAContainer
 {
-	private ArrayList<TAType> elems;
+	private ArrayList<T> elems;
+
+	public T get(int i)
+	{
+		return elems.get(i);
+	}
+
+	public int size()
+	{
+		return elems.size();
+	}
 }
 
-class TAPair extends TAContainer
+class TAPair<A,B> extends TAContainer
 {
-	private TAType elem1;
-	private TAType elem2;
+	private A elem1;
+	private B elem2;
+
+	public A first()
+	{
+		return elem1;
+	}
+
+	public B next()
+	{
+		return elem2;
+	}
+
 }
