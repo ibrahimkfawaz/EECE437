@@ -1,7 +1,7 @@
 public abstract class TAType
 {
 	private String name;
-	public String getName()
+	public String list()
 	{
 		return name;
 	}
@@ -17,6 +17,10 @@ class TABool extends TAType
 	public TABool()
 	{
 		value=true;
+	}
+	public TABool(String a)
+	{
+		super.setName(a);
 	}
 	public TABool(boolean value)
 	{
@@ -43,6 +47,10 @@ class TADouble extends TAType
 	{
 		return value;
 	}
+	public TADouble(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAInt extends TAType
@@ -59,5 +67,9 @@ class TAInt extends TAType
 	public int getValue()
 	{
 		return value;
+	}
+	public TAInt(String a)
+	{
+		super.setName(a);
 	}
 }

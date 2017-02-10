@@ -1,6 +1,11 @@
 public abstract class UnaryOperation
 {
 	public TAType result;
+	private String name;
+	public void setName(String name)
+	{
+		this.name = name;
+	}
 }
 
 class TANot extends UnaryOperation
@@ -8,6 +13,10 @@ class TANot extends UnaryOperation
 	public TANot(TABool val)
 	{
 		result = new TABool(!(val.getValue()));
+	}
+	public TANot(String a)
+	{
+		super.setName(a);
 	}
 }
 
@@ -21,6 +30,10 @@ class TAUnaryMinus extends UnaryOperation
 	{
 		result = new TADouble(val.getValue()*-1);
 	}
+	public TAUnaryMinus(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TACeiling extends UnaryOperation
@@ -33,6 +46,10 @@ class TACeiling extends UnaryOperation
 	{
 		result = new TAInt(val.getValue());
 	}
+	public TACeiling(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAFloor extends UnaryOperation
@@ -44,5 +61,9 @@ class TAFloor extends UnaryOperation
 	public TAFloor(TAInt val)
 	{
 		result = new TAInt(val.getValue());
+	}
+	public TAFloor(String a)
+	{
+		super.setName(a);
 	}
 }
