@@ -1,6 +1,11 @@
 public abstract class BinaryOperation
 {
 	public TAType result;
+	private String name;
+	public String setName(String name)
+	{
+		this.name = name;
+	}
 }
 
 class TAImplies extends BinaryOperation
@@ -8,6 +13,10 @@ class TAImplies extends BinaryOperation
 	public TAImplies(TABool op1,TABool op2)
 	{
 		result = new TABool((!op1.getValue()) || op2.getValue());
+	}
+	public TAImplies(String a)
+	{
+		super.setName(a);
 	}
 }
 
@@ -17,6 +26,10 @@ class TAAnd extends BinaryOperation
 	{
 		result = new TABool(op1.getValue() && op2.getValue());
 	}
+	public TAAnd(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAXor extends BinaryOperation
@@ -25,6 +38,10 @@ class TAXor extends BinaryOperation
 	{
 		result = new TABool(op1.getValue() ^ op2.getValue());
 	}
+	public TAXor(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAOr extends BinaryOperation
@@ -32,6 +49,10 @@ class TAOr extends BinaryOperation
 	public TAOr(TABool op1,TABool op2)
 	{
 		result = new TABool(op1.getValue() || op2.getValue());
+	}
+	public TAOr(String a)
+	{
+		super.setName(a);
 	}
 }
 
@@ -46,6 +67,10 @@ class TAAdd extends BinaryOperation
 	{
 		result = new TADouble(op1.getValue() + op2.getValue());
 	}
+	public TAAdd(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TASubtract extends BinaryOperation
@@ -59,6 +84,10 @@ class TASubtract extends BinaryOperation
 	{
 		result = new TADouble(op1.getValue() - op2.getValue());
 	}
+	public TASubtract(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAMultiply extends BinaryOperation
@@ -71,6 +100,10 @@ class TAMultiply extends BinaryOperation
 	public TAMultiply(TADouble op1,TADouble op2)
 	{
 		result = new TADouble(op1.getValue() * op2.getValue());
+	}
+	public TAMultiply(String a)
+	{
+		super.setName(a);
 	}	
 }
 
@@ -85,6 +118,10 @@ class TADivide extends BinaryOperation
 	{
 		result = new TADouble(op1.getValue() / op2.getValue());
 	}
+	public TADivide(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAMoreThan extends BinaryOperation
@@ -98,6 +135,10 @@ class TAMoreThan extends BinaryOperation
 	{
 		result = new TABool(op1.getValue() > op2.getValue());
 	}
+	public TAMoreThan(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TALessThan extends BinaryOperation
@@ -110,6 +151,10 @@ class TALessThan extends BinaryOperation
 	{
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
+	public TALessThan(String a)
+	{
+		super.setName(a);
+	}
 }
 
 class TAEquals extends BinaryOperation
@@ -121,5 +166,9 @@ class TAEquals extends BinaryOperation
 	public TAEquals(TADouble op1,TADouble op2)
 	{
 		result = new TABool(op1.getValue() == op2.getValue());
+	}
+	public TAEquals(String a)
+	{
+		super.setName(a);
 	}
 }
