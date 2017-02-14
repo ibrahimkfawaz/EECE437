@@ -6,6 +6,10 @@ public abstract class UnaryOperation
 	{
 		this.name = name;
 	}
+	public void list()
+	{
+		System.out.println(name);
+	}
 }
 
 class TANot extends UnaryOperation
@@ -18,6 +22,7 @@ class TANot extends UnaryOperation
 	{
 		super.setName(a);
 	}
+
 }
 
 class TAUnaryMinus extends UnaryOperation

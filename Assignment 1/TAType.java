@@ -1,9 +1,9 @@
 public abstract class TAType
 {
 	private String name;
-	public String list()
+	public void list()
 	{
-		return name;
+		System.out.println(name);
 	}
 	public void setName(String name)
 	{

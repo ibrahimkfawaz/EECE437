@@ -1,10 +1,14 @@
 public abstract class BinaryOperation
 {
-	public TAType result;
+	private TAType result;
 	private String name;
 	public String setName(String name)
 	{
 		this.name = name;
+	}
+	public void list()
+	{
+		System.out.println(name);
 	}
 }
 
