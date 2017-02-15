@@ -1,8 +1,11 @@
+/*
+ * add exceptions for type mismatching
+ */
 public abstract class BinaryOperation
 {
-	private TAType result;
+	public TAType result;
 	private String name;
-	public String setName(String name)
+	public void setName(String name)
 	{
 		this.name = name;
 	}
@@ -143,6 +146,11 @@ class TAMoreThan extends BinaryOperation
 	{
 		super.setName(a);
 	}
+	public TAMoreThan(TAType op1,UnaryOperation op2)
+	{
+		if(op2.result instanceof TADouble || op2.result instanceof TAInt)
+		result = new TABool(op1 > op2.result.getValue());
+	}
 }
 
 class TALessThan extends BinaryOperation
@@ -159,6 +167,11 @@ class TALessThan extends BinaryOperation
 	{
 		super.setName(a);
 	}
+	public TALessThan(TAType op1,UnaryOperation op2)
+	{
+		if(op2.result instanceof TADouble || op2.result instanceof TAInt)
+		result = new TABool(op1 < op2.result.getValue());
+	}
 }
 
 class TAEquals extends BinaryOperation
@@ -174,5 +187,10 @@ class TAEquals extends BinaryOperation
 	public TAEquals(String a)
 	{
 		super.setName(a);
+	}
+	public TAEquals(TAType op1,UnaryOperation op2)
+	{
+		if(op2.result instanceof TADouble || op2.result instanceof TAInt)
+		result = new TABool(op1 == op2.result.getValue());
 	}
 }

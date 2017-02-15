@@ -1,6 +1,6 @@
 public abstract class TAType
 {
-	private String name;
+	public String name;
 	public void list()
 	{
 		System.out.println(name);

@@ -1,3 +1,6 @@
+/*
+ * add exceptions for type mismatching
+ */
 public abstract class UnaryOperation
 {
 	public TAType result;
@@ -18,9 +21,25 @@ class TANot extends UnaryOperation
 	{
 		result = new TABool(!(val.getValue()));
 	}
-	public TANot(String a)
+	public TANot(String val)
 	{
-		super.setName(a);
+		super.setName(val);
+	}
+	public TANot(UnaryOperation val)
+	{
+		if(val.result instanceof TABool)
+		{
+			TABool temp = (TABool) val.result;
+			result = new TABool(!(temp.getValue()));
+		}
+	}
+	public TANot(BinaryOperation val)
+	{
+		if(val.result instanceof TABool)
+		{
+			TABool temp = (TABool) val.result;
+			result = new TABool(!(temp.getValue()));
+		}
 	}
 
 }
@@ -35,9 +54,35 @@ class TAUnaryMinus extends UnaryOperation
 	{
 		result = new TADouble(val.getValue()*-1);
 	}
-	public TAUnaryMinus(String a)
+	public TAUnaryMinus(String val)
 	{
-		super.setName(a);
+		super.setName(val);
+	}
+	public TAUnaryMinus(UnaryOperation val)
+	{
+		if(val.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt) val.result;
+			result = new TAInt(temp.getValue());
+		} 
+		else if(val.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble) val.result;
+			result = new TADouble(temp.getValue());
+		}
+	}
+	public TAUnaryMinus(BinaryOperation val)
+	{
+		if(val.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt) val.result;
+			result = new TAInt(temp.getValue());
+		} 
+		else if(val.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble) val.result;
+			result = new TADouble(temp.getValue());
+		}
 	}
 }
 
@@ -55,6 +100,32 @@ class TACeiling extends UnaryOperation
 	{
 		super.setName(a);
 	}
+	public TACeiling(UnaryOperation val)
+	{
+		if(val.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt) val.result;
+			result = new TAInt(temp.getValue());
+		} 
+		else if(val.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble) val.result;
+			result = new TADouble(Math.ceil(temp.getValue()));
+		}
+	}
+	public TACeiling(BinaryOperation val)
+	{
+		if(val.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt) val.result;
+			result = new TAInt(temp.getValue());
+		} 
+		else if(val.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble) val.result;
+			result = new TADouble(Math.ceil(temp.getValue()));
+		}
+	}
 }
 
 class TAFloor extends UnaryOperation
@@ -67,8 +138,34 @@ class TAFloor extends UnaryOperation
 	{
 		result = new TAInt(val.getValue());
 	}
-	public TAFloor(String a)
+	public TAFloor(String val)
 	{
-		super.setName(a);
+		super.setName(val);
+	}
+	public TAFloor(UnaryOperation val)
+	{
+		if(val.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt) val.result;
+			result = new TAInt(temp.getValue());
+		} 
+		else if(val.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble) val.result;
+			result = new TADouble(Math.floor(temp.getValue()));
+		}
+	}
+	public TAFloor(BinaryOperation val)
+	{
+		if(val.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt) val.result;
+			result = new TAInt(temp.getValue());
+		} 
+		else if(val.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble) val.result;
+			result = new TADouble(Math.floor(temp.getValue()));
+		}
 	}
 }
