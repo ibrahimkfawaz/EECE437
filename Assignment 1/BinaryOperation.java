@@ -1,32 +1,46 @@
 /*
  * add exceptions for type mismatching
  */
-public abstract class BinaryOperation
+public abstract class BinaryOperation extends TAObject
 {
 	public TAType result;
-	private String name;
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-	public void list()
-	{
-		System.out.println(name);
-	}
 }
 
 class TAImplies extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Implies ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAImplies(TABool op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool((!op1.getValue()) || op2.getValue());
 	}
 	public TAImplies(String a)
 	{
 		super.setName(a);
 	}
+	
 	public TAImplies(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -36,6 +50,8 @@ class TAImplies extends BinaryOperation
 	}
 	public TAImplies(UnaryOperation op1, TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -45,6 +61,8 @@ class TAImplies extends BinaryOperation
 	}
 	public TAImplies(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -54,6 +72,8 @@ class TAImplies extends BinaryOperation
 	}
 	public TAImplies(BinaryOperation op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -63,6 +83,8 @@ class TAImplies extends BinaryOperation
 	}
 	public TAImplies(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -74,8 +96,28 @@ class TAImplies extends BinaryOperation
 
 class TAAnd extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "AND ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAAnd(TABool op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() && op2.getValue());
 	}
 	public TAAnd(String a)
@@ -84,6 +126,8 @@ class TAAnd extends BinaryOperation
 	}
 	public TAAnd(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -93,6 +137,8 @@ class TAAnd extends BinaryOperation
 	}
 	public TAAnd(UnaryOperation op1, TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -102,6 +148,8 @@ class TAAnd extends BinaryOperation
 	}
 	public TAAnd(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -111,6 +159,8 @@ class TAAnd extends BinaryOperation
 	}
 	public TAAnd(BinaryOperation op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -120,6 +170,8 @@ class TAAnd extends BinaryOperation
 	}
 	public TAAnd(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -132,8 +184,28 @@ class TAAnd extends BinaryOperation
 
 class TAXor extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "XOR ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAXor(TABool op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() ^ op2.getValue());
 	}
 	public TAXor(String a)
@@ -142,6 +214,8 @@ class TAXor extends BinaryOperation
 	}
 	public TAXor(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -151,6 +225,8 @@ class TAXor extends BinaryOperation
 	}
 	public TAXor(UnaryOperation op1, TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -160,6 +236,8 @@ class TAXor extends BinaryOperation
 	}
 	public TAXor(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -169,6 +247,8 @@ class TAXor extends BinaryOperation
 	}
 	public TAXor(BinaryOperation op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -178,6 +258,8 @@ class TAXor extends BinaryOperation
 	}
 	public TAXor(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -190,8 +272,28 @@ class TAXor extends BinaryOperation
 
 class TAOr extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "OR ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAOr(TABool op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() || op2.getValue());
 	}
 	public TAOr(String a)
@@ -200,6 +302,8 @@ class TAOr extends BinaryOperation
 	}
 	public TAOr(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -209,6 +313,8 @@ class TAOr extends BinaryOperation
 	}
 	public TAOr(UnaryOperation op1, TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -218,6 +324,8 @@ class TAOr extends BinaryOperation
 	}
 	public TAOr(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -227,6 +335,8 @@ class TAOr extends BinaryOperation
 	}
 	public TAOr(BinaryOperation op1,TABool op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2 instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -236,6 +346,8 @@ class TAOr extends BinaryOperation
 	}
 	public TAOr(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TABool && op2.result instanceof TABool)
 		{
 			TABool temp1 = (TABool)op1.result;
@@ -247,12 +359,34 @@ class TAOr extends BinaryOperation
 
 class TAAdd extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Add ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAAdd(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TAInt(op1.getValue() + op2.getValue());
 	}
 	public TAAdd(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TADouble(op1.getValue() + op2.getValue());
 	}
 	public TAAdd(String a)
@@ -261,6 +395,8 @@ class TAAdd extends BinaryOperation
 	}
 	public TAAdd(UnaryOperation op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -269,6 +405,8 @@ class TAAdd extends BinaryOperation
 	}
 	public TAAdd(UnaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -277,6 +415,8 @@ class TAAdd extends BinaryOperation
 	}
 	public TAAdd(UnaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -293,6 +433,8 @@ class TAAdd extends BinaryOperation
 	}
 	public TAAdd(BinaryOperation op1, TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -301,6 +443,8 @@ class TAAdd extends BinaryOperation
 	}
 	public TAAdd(BinaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -309,6 +453,8 @@ class TAAdd extends BinaryOperation
 	}
 	public TAAdd(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -327,13 +473,35 @@ class TAAdd extends BinaryOperation
 
 class TASubtract extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Subtract ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TASubtract(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TAInt(op1.getValue() - op2.getValue());
 	}
 
 	public TASubtract(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TADouble(op1.getValue() - op2.getValue());
 	}
 	public TASubtract(String a)
@@ -342,6 +510,8 @@ class TASubtract extends BinaryOperation
 	}
 	public TASubtract(UnaryOperation op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -350,6 +520,8 @@ class TASubtract extends BinaryOperation
 	}
 	public TASubtract(UnaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -358,6 +530,8 @@ class TASubtract extends BinaryOperation
 	}
 	public TASubtract(UnaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -374,6 +548,8 @@ class TASubtract extends BinaryOperation
 	}
 	public TASubtract(BinaryOperation op1, TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -382,6 +558,8 @@ class TASubtract extends BinaryOperation
 	}
 	public TASubtract(BinaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -390,6 +568,8 @@ class TASubtract extends BinaryOperation
 	}
 	public TASubtract(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -408,13 +588,34 @@ class TASubtract extends BinaryOperation
 
 class TAMultiply extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Multiply ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAMultiply(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TAInt(op1.getValue() * op2.getValue());
 	}
-
 	public TAMultiply(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TADouble(op1.getValue() * op2.getValue());
 	}
 	public TAMultiply(String a)
@@ -423,6 +624,8 @@ class TAMultiply extends BinaryOperation
 	}
 	public TAMultiply(UnaryOperation op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -431,6 +634,8 @@ class TAMultiply extends BinaryOperation
 	}
 	public TAMultiply(UnaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -439,6 +644,8 @@ class TAMultiply extends BinaryOperation
 	}
 	public TAMultiply(UnaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -455,6 +662,8 @@ class TAMultiply extends BinaryOperation
 	}
 	public TAMultiply(BinaryOperation op1, TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -463,6 +672,8 @@ class TAMultiply extends BinaryOperation
 	}
 	public TAMultiply(BinaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -471,6 +682,8 @@ class TAMultiply extends BinaryOperation
 	}
 	public TAMultiply(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -489,13 +702,35 @@ class TAMultiply extends BinaryOperation
 
 class TADivide extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Divide ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TADivide(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TADouble(op1.getValue() / op2.getValue());
 	}
 
 	public TADivide(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TADouble(op1.getValue() / op2.getValue());
 	}
 	public TADivide(String a)
@@ -504,6 +739,8 @@ class TADivide extends BinaryOperation
 	}
 	public TADivide(UnaryOperation op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -512,6 +749,8 @@ class TADivide extends BinaryOperation
 	}
 	public TADivide(UnaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -520,6 +759,8 @@ class TADivide extends BinaryOperation
 	}
 	public TADivide(UnaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -536,6 +777,8 @@ class TADivide extends BinaryOperation
 	}
 	public TADivide(BinaryOperation op1, TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt)
 		{
 			TAInt temp = (TAInt)op1.result;
@@ -544,6 +787,8 @@ class TADivide extends BinaryOperation
 	}
 	public TADivide(BinaryOperation op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TADouble)
 		{
 			TADouble temp = (TADouble)op1.result;
@@ -552,6 +797,8 @@ class TADivide extends BinaryOperation
 	}
 	public TADivide(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -570,21 +817,47 @@ class TADivide extends BinaryOperation
 
 class TAMoreThan extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "More Than ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAMoreThan(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() > op2.getValue());
 	}
 
 	public TAMoreThan(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() > op2.getValue());
 	}
 	public TAMoreThan(TADouble op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() > op2.getValue());
 	}
 	public TAMoreThan(TAInt op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() > op2.getValue());
 	}
 	public TAMoreThan(String a)
@@ -593,6 +866,8 @@ class TAMoreThan extends BinaryOperation
 	}
 	public TAMoreThan(TAType op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1 instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1;
@@ -620,6 +895,8 @@ class TAMoreThan extends BinaryOperation
 	}
 	public TAMoreThan(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -647,6 +924,8 @@ class TAMoreThan extends BinaryOperation
 	}
 	public TAMoreThan(TAType op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1 instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1;
@@ -674,6 +953,8 @@ class TAMoreThan extends BinaryOperation
 	}
 	public TAMoreThan(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -701,6 +982,8 @@ class TAMoreThan extends BinaryOperation
 	}
 	public TAMoreThan(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -731,21 +1014,47 @@ class TAMoreThan extends BinaryOperation
 
 class TALessThan extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Less Than ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TALessThan(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
 
 	public TALessThan(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
 	public TALessThan(TADouble op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
 	public TALessThan(TAInt op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
 	public TALessThan(String a)
@@ -754,6 +1063,8 @@ class TALessThan extends BinaryOperation
 	}
 	public TALessThan(TAType op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1 instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1;
@@ -781,6 +1092,8 @@ class TALessThan extends BinaryOperation
 	}
 	public TALessThan(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -808,6 +1121,8 @@ class TALessThan extends BinaryOperation
 	}
 	public TALessThan(TAType op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1 instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1;
@@ -835,6 +1150,8 @@ class TALessThan extends BinaryOperation
 	}
 	public TALessThan(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -862,6 +1179,8 @@ class TALessThan extends BinaryOperation
 	}
 	public TALessThan(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -892,12 +1211,34 @@ class TALessThan extends BinaryOperation
 
 class TAEquals extends BinaryOperation
 {
+	TAObject operand1;
+	TAObject operand2;
+	public void list()
+	{
+		if(this.getName().equals(""))
+		{
+			System.out.print("( " + "Equals ");
+			operand1.list();
+			System.out.print(" ");
+			operand2.list();
+			System.out.print(" )");
+			System.out.println();
+		}
+		else
+		{
+			System.out.println(this.getName());
+		}
+	}
 	public TAEquals(TAInt op1,TAInt op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() == op2.getValue());
 	}
 	public TAEquals(TADouble op1,TADouble op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		result = new TABool(op1.getValue() == op2.getValue());
 	}
 	public TAEquals(String a)
@@ -906,6 +1247,8 @@ class TAEquals extends BinaryOperation
 	}
 	public TAEquals(TAType op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1 instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1;
@@ -933,6 +1276,8 @@ class TAEquals extends BinaryOperation
 	}
 	public TAEquals(UnaryOperation op1, UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -960,6 +1305,8 @@ class TAEquals extends BinaryOperation
 	}
 	public TAEquals(TAType op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1 instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1;
@@ -987,6 +1334,8 @@ class TAEquals extends BinaryOperation
 	}
 	public TAEquals(BinaryOperation op1,UnaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;
@@ -1014,6 +1363,8 @@ class TAEquals extends BinaryOperation
 	}
 	public TAEquals(BinaryOperation op1,BinaryOperation op2)
 	{
+		operand1 = op1;
+		operand2 = op2;
 		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 		{
 			TAInt temp1 = (TAInt)op1.result;

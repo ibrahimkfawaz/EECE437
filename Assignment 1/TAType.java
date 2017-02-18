@@ -1,13 +1,8 @@
-public abstract class TAType
+public abstract class TAType extends TAObject
 {
-	public String name;
 	public void list()
 	{
-		System.out.println(name);
-	}
-	public void setName(String name)
-	{
-		this.name = name;
+		System.out.print(this.getName());
 	}
 }
 
@@ -17,6 +12,10 @@ class TABool extends TAType
 	public TABool()
 	{
 		value=true;
+	}
+	public void set(boolean val)
+	{
+		value=val;
 	}
 	public TABool(String a)
 	{
@@ -39,6 +38,10 @@ class TADouble extends TAType
 	{
 		value=0;
 	}
+	public void set(double val)
+	{
+		value=val;
+	}
 	public TADouble(double value)
 	{
 		this.value=value;
@@ -59,6 +62,10 @@ class TAInt extends TAType
 	public TAInt()
 	{
 		value=0;
+	}
+	public void set(int val)
+	{
+		value = val;
 	}
 	public TAInt(int value)
 	{
