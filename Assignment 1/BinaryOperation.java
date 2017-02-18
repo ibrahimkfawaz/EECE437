@@ -502,6 +502,70 @@ class TADivide extends BinaryOperation
 	{
 		super.setName(a);
 	}
+	public TADivide(UnaryOperation op1,TAInt op2)
+	{
+		if(op1.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt)op1.result;
+			result = new TAInt(temp.getValue()/op2.getValue());
+		}
+	}
+	public TADivide(UnaryOperation op1,TADouble op2)
+	{
+		if(op1.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble)op1.result;
+			result = new TADouble(temp.getValue()/op2.getValue());
+		}
+	}
+	public TADivide(UnaryOperation op1,UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TAInt(temp1.getValue() / temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TADouble(temp1.getValue() / temp2.getValue());
+			
+		}
+	}
+	public TADivide(BinaryOperation op1, TAInt op2)
+	{
+		if(op1.result instanceof TAInt)
+		{
+			TAInt temp = (TAInt)op1.result;
+			result = new TAInt(temp.getValue()/op2.getValue());
+		}
+	}
+	public TADivide(BinaryOperation op1,TADouble op2)
+	{
+		if(op1.result instanceof TADouble)
+		{
+			TADouble temp = (TADouble)op1.result;
+			result = new TADouble(temp.getValue()/op2.getValue());
+		}
+	}
+	public TADivide(BinaryOperation op1,BinaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TAInt(temp1.getValue() / temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TADouble(temp1.getValue() / temp2.getValue());
+			
+		}
+	}
 }
 
 class TAMoreThan extends BinaryOperation
@@ -515,13 +579,154 @@ class TAMoreThan extends BinaryOperation
 	{
 		result = new TABool(op1.getValue() > op2.getValue());
 	}
+	public TAMoreThan(TADouble op1,TAInt op2)
+	{
+		result = new TABool(op1.getValue() > op2.getValue());
+	}
+	public TAMoreThan(TAInt op1,TADouble op2)
+	{
+		result = new TABool(op1.getValue() > op2.getValue());
+	}
 	public TAMoreThan(String a)
 	{
 		super.setName(a);
 	}
 	public TAMoreThan(TAType op1,UnaryOperation op2)
 	{
+		if(op1 instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if (op1 instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1 instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1 instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
 	}
+	public TAMoreThan(UnaryOperation op1, UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+	}
+	public TAMoreThan(TAType op1,BinaryOperation op2)
+	{
+		if(op1 instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if (op1 instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1 instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1 instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+	}
+	public TAMoreThan(BinaryOperation op1,UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+	}
+	public TAMoreThan(BinaryOperation op1,BinaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() > temp2.getValue());
+		}
+	}
+	
 }
 
 class TALessThan extends BinaryOperation
@@ -530,7 +735,16 @@ class TALessThan extends BinaryOperation
 	{
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
+
 	public TALessThan(TADouble op1,TADouble op2)
+	{
+		result = new TABool(op1.getValue() < op2.getValue());
+	}
+	public TALessThan(TADouble op1,TAInt op2)
+	{
+		result = new TABool(op1.getValue() < op2.getValue());
+	}
+	public TALessThan(TAInt op1,TADouble op2)
 	{
 		result = new TABool(op1.getValue() < op2.getValue());
 	}
@@ -540,7 +754,140 @@ class TALessThan extends BinaryOperation
 	}
 	public TALessThan(TAType op1,UnaryOperation op2)
 	{
+		if(op1 instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if (op1 instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1 instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1 instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
 	}
+	public TALessThan(UnaryOperation op1, UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+	}
+	public TALessThan(TAType op1,BinaryOperation op2)
+	{
+		if(op1 instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if (op1 instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1 instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1 instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+	}
+	public TALessThan(BinaryOperation op1,UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+	}
+	public TALessThan(BinaryOperation op1,BinaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() < temp2.getValue());
+		}
+	}
+	
 }
 
 class TAEquals extends BinaryOperation
@@ -559,6 +906,138 @@ class TAEquals extends BinaryOperation
 	}
 	public TAEquals(TAType op1,UnaryOperation op2)
 	{
-
+		if(op1 instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if (op1 instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1 instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1 instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
 	}
+	public TAEquals(UnaryOperation op1, UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+	}
+	public TAEquals(TAType op1,BinaryOperation op2)
+	{
+		if(op1 instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if (op1 instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1 instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1 instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+	}
+	public TAEquals(BinaryOperation op1,UnaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+	}
+	public TAEquals(BinaryOperation op1,BinaryOperation op2)
+	{
+		if(op1.result instanceof TAInt && op2.result instanceof TAInt)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if (op1.result instanceof TADouble && op2.result instanceof TADouble)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1.result instanceof TAInt && op2.result instanceof TADouble)
+		{
+			TAInt temp1 = (TAInt)op1.result;
+			TADouble temp2 = (TADouble)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+		else if(op1.result instanceof TADouble && op2.result instanceof TAInt)
+		{
+			TADouble temp1 = (TADouble)op1.result;
+			TAInt temp2 = (TAInt)op2.result;
+			result = new TABool(temp1.getValue() == temp2.getValue());
+		}
+	}
+
 }
