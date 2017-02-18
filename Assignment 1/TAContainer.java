@@ -1,14 +1,13 @@
 import java.util.ArrayList;
-public abstract class TAContainer
+public abstract class TAContainer extends TAObject
 {
 	
 }
 
-class TAArray<T> extends TAContainer
+class TAArray extends TAContainer
 {
-	private ArrayList<T> elems;
-
-	public T get(int i)
+	private ArrayList<TAObject> elems = new ArrayList<TAObject>();
+	public TAObject get(int i)
 	{
 		return elems.get(i);
 	}
@@ -19,17 +18,21 @@ class TAArray<T> extends TAContainer
 	}
 }
 
-class TAPair<A,B> extends TAContainer
+class TAPair extends TAContainer
 {
-	private A elem1;
-	private B elem2;
-
-	public A first()
+	private TAObject elem1;
+	private TAObject elem2;
+	public TAPair(TAObject op1,TAObject op2)
+	{
+		this.elem1 = op1;
+		this.elem2 = op2;
+	}
+	public TAObject first()
 	{
 		return elem1;
 	}
 
-	public B next()
+	public TAObject next()
 	{
 		return elem2;
 	}
