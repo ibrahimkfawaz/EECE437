@@ -1,6 +1,4 @@
-/*
- * add exceptions for type mismatching
- */
+
 public abstract class UnaryOperation extends TAObject
 {
 	public TAType result;
