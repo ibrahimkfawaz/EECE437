@@ -4,11 +4,25 @@ public class Test
 	{
 		TAInt x = new TAInt(7);
 		TADouble d = new TADouble(2.3);
-		TACeiling y = new TACeiling(d); //y is ceiling of d, y=3
-		TABool b = new TABool(); //default constructor, value is true
-		TALessThan t1 = new TALessThan(x,y); // 7<3, gives false
-		TAAnd t2 = new TAAnd(t1,b); //true AND false = false
-		TABool temp = (TABool)t2.result;
-		System.out.println(temp.getValue()); //prints the value, false
+		d.setName("d");
+		TACeiling y = new TACeiling(d); // denotes y is the ceiling of d
+		TABool b = new TABool();
+		TALessThan t1 = new TALessThan(x,y); // denotes x < y
+		y.list();
+		System.out.println();
+		t1.list();
+		System.out.println();
+		TAAnd t2 = new TAAnd(t1,b); // denotes b and t1
+		b.setName("b");
+		t2.list();
+		System.out.println();
+		b.set(true);
+		TANot t3 = new TANot(b);
+		t3.printState();
+		b.set(false);
+		t3.evaluate();
+		t3.printState();
+		b.setName("b");
 	}
 }
+

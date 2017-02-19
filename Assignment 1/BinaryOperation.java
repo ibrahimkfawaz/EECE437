@@ -19,11 +19,10 @@ class TAImplies extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAImplies(TABool op1,TABool op2)
@@ -92,6 +91,47 @@ class TAImplies extends BinaryOperation
 			result = new TABool((!temp1.getValue()) || temp2.getValue());
 		}
 	}
+	public void evaluate()
+	{
+		if(operand1 instanceof TABool && operand2 instanceof TABool)
+		{
+			TABool temp1 = (TABool)operand1;
+			TABool temp2 = (TABool)operand2;
+			result = new TABool((!temp1.getValue()) || temp2.getValue());
+			
+		}
+		else if(operand1 instanceof UnaryOperation && operand2 instanceof UnaryOperation)
+		{
+			UnaryOperation temp1 = (UnaryOperation)operand1;
+			UnaryOperation temp2 = (UnaryOperation)operand2;
+			if(temp1.result instanceof TABool && temp2.result instanceof TABool)
+			{
+				TABool temp1 = (TABool)op1.result;
+				TABool temp2 = (TABool)op2.result;
+				result = new TABool((!temp1.getValue()) || temp2.getValue());
+			}
+		}
+		else if(operand1 instanceof UnaryOperation && operand2 instanceof TABool)
+		{
+			
+		}
+		else if(operand1 instanceof BinaryOperation && operand2 instanceof TABool)
+		{
+			
+		}
+		else if(operand1 instanceof BinaryOperation && operand2 instanceof UnaryOperation)
+		{
+			
+		}
+		else if(operand1 instanceof BinaryOperation && operand2 instanceof BinaryOperation)
+		{
+			
+		}
+	}
+	public void printState()
+	{
+		
+	}
 }
 
 class TAAnd extends BinaryOperation
@@ -107,11 +147,10 @@ class TAAnd extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAAnd(TABool op1,TABool op2)
@@ -195,11 +234,10 @@ class TAXor extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAXor(TABool op1,TABool op2)
@@ -283,11 +321,10 @@ class TAOr extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAOr(TABool op1,TABool op2)
@@ -370,11 +407,10 @@ class TAAdd extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAAdd(TAInt op1,TAInt op2)
@@ -484,11 +520,10 @@ class TASubtract extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TASubtract(TAInt op1,TAInt op2)
@@ -599,11 +634,10 @@ class TAMultiply extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAMultiply(TAInt op1,TAInt op2)
@@ -713,11 +747,10 @@ class TADivide extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TADivide(TAInt op1,TAInt op2)
@@ -828,11 +861,10 @@ class TAMoreThan extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAMoreThan(TAInt op1,TAInt op2)
@@ -1025,11 +1057,10 @@ class TALessThan extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TALessThan(TAInt op1,TAInt op2)
@@ -1222,11 +1253,10 @@ class TAEquals extends BinaryOperation
 			System.out.print(" ");
 			operand2.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAEquals(TAInt op1,TAInt op2)

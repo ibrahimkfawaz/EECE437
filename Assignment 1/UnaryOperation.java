@@ -17,11 +17,10 @@ class TANot extends UnaryOperation
 			System.out.print("( " + "NOT ");
 			operand.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TANot(String val)
@@ -96,7 +95,6 @@ class TAUnaryMinus extends UnaryOperation
 			System.out.print("( " + "Minus ");
 			operand.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
@@ -213,11 +211,10 @@ class TACeiling extends UnaryOperation
 			System.out.print("( " + "Ceiling ");
 			operand.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TACeiling(TADouble val)
@@ -330,11 +327,10 @@ class TAFloor extends UnaryOperation
 			System.out.print("( " + "Floor ");
 			operand.list();
 			System.out.print(" )");
-			System.out.println();
 		}
 		else
 		{
-			System.out.println(this.getName());
+			System.out.print(this.getName());
 		}
 	}
 	public TAFloor(TADouble val)
