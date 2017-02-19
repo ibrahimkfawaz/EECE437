@@ -83,6 +83,10 @@ class TANot extends UnaryOperation
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
 	}
+	public String type()
+	{
+		return "Not";
+	}
 }
 
 class TAUnaryMinus extends UnaryOperation
@@ -198,6 +202,10 @@ class TAUnaryMinus extends UnaryOperation
 			TADouble temp = (TADouble)result;
 			System.out.println(temp.getValue());
 		}
+	}
+	public String type()
+	{
+		return "Minus";
 	}
 }
 
@@ -315,6 +323,10 @@ class TACeiling extends UnaryOperation
 			System.out.println(temp.getValue());
 		}
 	}
+	public String type()
+	{
+		return "Ceiling";
+	}
 }
 
 class TAFloor extends UnaryOperation
@@ -332,6 +344,10 @@ class TAFloor extends UnaryOperation
 		{
 			System.out.print(this.getName());
 		}
+	}
+	public String type()
+	{
+		return "Floor";
 	}
 	public TAFloor(TADouble val)
 	{

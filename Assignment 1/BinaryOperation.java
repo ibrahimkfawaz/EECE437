@@ -35,7 +35,6 @@ class TAImplies extends BinaryOperation
 	{
 		super.setName(a);
 	}
-	
 	public TAImplies(UnaryOperation op1, UnaryOperation op2)
 	{
 		operand1 = op1;
@@ -161,6 +160,10 @@ class TAImplies extends BinaryOperation
 	{
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
+	}
+	public String type()
+	{
+		return "Implies";
 	}
 }
 
@@ -319,7 +322,10 @@ class TAAnd extends BinaryOperation
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
 	}
-	
+	public String type()
+	{
+		return "And";
+	}
 }
 
 class TAXor extends BinaryOperation
@@ -477,7 +483,10 @@ class TAXor extends BinaryOperation
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
 	}
-	
+	public String type()
+	{
+		return "Xor";
+	}
 }
 
 class TAOr extends BinaryOperation
@@ -634,6 +643,10 @@ class TAOr extends BinaryOperation
 	{
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
+	}
+	public String type()
+	{
+		return "Or";
 	}
 }
 
@@ -852,6 +865,10 @@ class TAAdd extends BinaryOperation
 			System.out.println(temp.getValue());
 		}
 	}
+	public String type()
+	{
+		return "Add";
+	}
 }
 
 class TASubtract extends BinaryOperation
@@ -879,7 +896,6 @@ class TASubtract extends BinaryOperation
 		operand2 = op2;
 		result = new TAInt(op1.getValue() - op2.getValue());
 	}
-
 	public TASubtract(TADouble op1,TADouble op2)
 	{
 		operand1 = op1;
@@ -1069,6 +1085,10 @@ class TASubtract extends BinaryOperation
 			TADouble temp = (TADouble)result;
 			System.out.println(temp.getValue());
 		}
+	}
+	public String type()
+	{
+		return "Subtract";
 	}
 }
 
@@ -1287,6 +1307,10 @@ class TAMultiply extends BinaryOperation
 			System.out.println(temp.getValue());
 		}
 	}
+	public String type()
+	{
+		return "Multiply";
+	}
 }
 
 class TADivide extends BinaryOperation
@@ -1504,6 +1528,10 @@ class TADivide extends BinaryOperation
 			TADouble temp = (TADouble)result;
 			System.out.println(temp.getValue());
 		}
+	}
+	public String type()
+	{
+		return "Divide";
 	}
 }
 
@@ -1877,7 +1905,10 @@ class TAMoreThan extends BinaryOperation
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
 	}
-	
+	public String type()
+	{
+		return "MoreThan";
+	}
 }
 
 class TALessThan extends BinaryOperation
@@ -2250,7 +2281,10 @@ class TALessThan extends BinaryOperation
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
 	}
-	
+	public String type()
+	{
+		return "LessThan";
+	}
 }
 
 class TAEquals extends BinaryOperation
@@ -2610,5 +2644,8 @@ class TAEquals extends BinaryOperation
 		TABool temp = (TABool)result;
 		System.out.println(temp.getValue());
 	}
-
+	public String type()
+	{
+		return "Equals";
+	}
 }
