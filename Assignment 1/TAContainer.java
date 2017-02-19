@@ -6,6 +6,10 @@ public abstract class TAContainer extends TAObject
 
 class TAArray extends TAContainer
 {
+	public void list()
+	{
+		System.out.println(this.getName());
+	}
 	private ArrayList<TAObject> elems = new ArrayList<TAObject>();
 	public TAObject get(int i)
 	{
@@ -20,6 +24,10 @@ class TAArray extends TAContainer
 
 class TAPair extends TAContainer
 {
+	public void list()
+	{
+		System.out.println(this.getName());
+	}
 	private TAObject elem1;
 	private TAObject elem2;
 	public TAPair(TAObject op1,TAObject op2)
