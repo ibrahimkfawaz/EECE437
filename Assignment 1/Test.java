@@ -15,23 +15,23 @@ public class Test
 		t1.list();
 		System.out.println();
 		TAAnd t2 = new TAAnd(t1,b); // denotes b and t1
-		b.setName("b");
-		t2.list();
+		b.setName("b"); //change name of b
+		t2.list(); //list of AND operatir t2
 		System.out.println();
-		b.set(true);
-		TANot t3 = new TANot(b);
+		b.set(true); //change value of b
+		TANot t3 = new TANot(b); //new NOT operator
 	
 		t3.printState();
-		b.set(false);
-		y.evaluate();
+		b.set(false); //change valye of b
+		y.evaluate(); //evaluate after changing value of b
 		t3.evaluate();
-		t3.printState();
+		t3.printState(); //state changes
 		System.out.println();
 		TALessThan tt = new TALessThan(d,d1);
 		tt.printState();
-		d.set(5.0);
-		tt.evaluate();
-		tt.printState();
+		d.set(5.0); //change value of
+		tt.evaluate(); //evaluate after change
+		tt.printState(); //state changes
 	}
 }
 

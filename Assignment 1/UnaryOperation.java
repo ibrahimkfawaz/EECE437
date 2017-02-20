@@ -1,4 +1,7 @@
-
+//UnaryOperations represents operations that take one operand
+//TAObject operand: representing the operand
+//each class has different constructors depending on the type of passed object
+//instead of having a constructor that take TAObject as parameter, divide funcionalities
 public abstract class UnaryOperation extends TAObject
 {
 	public TAType result;
@@ -7,6 +10,7 @@ public abstract class UnaryOperation extends TAObject
 
 class TANot extends UnaryOperation
 {
+
 	TAObject operand;
 	public void list()
 	{

@@ -1,4 +1,7 @@
-
+//BinaryOperations represents operations that take two operands
+//TAObject operand1,operan2: representing the two operands
+//each class has different constructors depending on the type of passed object
+//instead of having a constructor that take TAObject as parameter, divide funcionalities
 public abstract class BinaryOperation extends TAObject
 {
 	public TAType result;

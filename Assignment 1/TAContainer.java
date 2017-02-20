@@ -1,3 +1,5 @@
+//Pair and Array extend TAContainer
+// type() returns a String with the name of the type
 import java.util.ArrayList;
 public abstract class TAContainer extends TAObject
 {
@@ -10,15 +12,20 @@ class TAArray extends TAContainer
 	{
 		System.out.println(this.getName());
 	}
+	//since all classes derive from TAObject, ? is a wildcard to represent the type of object inside the arraylist
 	private ArrayList<? extends TAObject> elems;
 	public String type()
 	{
 		return "Array";
 	}
+	//get object at i'th position
 	public TAObject get(int i)
 	{
 		return elems.get(i);
 	}
+	//a represents the name of the array, type takes in a String which is passed through the type() method inside each object
+	//n is the size
+	//will check the type and create a new arraylist based on the type
 	TAArray(String a,String type,int n)
 	{
 		this.setName(a);
@@ -99,7 +106,7 @@ class TAArray extends TAContainer
 
 class TAPair extends TAContainer
 {
-	
+	//elements inside the pair
 	private TAObject elem1;
 	private TAObject elem2;
 	public void list()

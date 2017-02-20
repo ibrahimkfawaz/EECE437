@@ -1,3 +1,4 @@
+//primitive types, all primitive type classes extend TAType
 public abstract class TAType extends TAObject
 {
 	
@@ -10,6 +11,7 @@ class TABool extends TAType
 	{
 		return "Boolean";
 	}
+	//default value: true
 	public TABool()
 	{
 		value=true;
@@ -30,6 +32,7 @@ class TABool extends TAType
 	{
 		return value;
 	}
+	//list name
 	public void list()
 	{
 		System.out.print(this.getName());
