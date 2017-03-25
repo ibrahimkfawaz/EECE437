@@ -24,7 +24,7 @@ public class TANot extends TAUnaryFormulae
 		operand = val;
 		result = new TABool(!(val.getValue()));
 	}
-	public TANot(UnaryOperation val)
+	public TANot(TAUnaryFormulae val)
 	{
 		operand = val;
 		if(val.result instanceof TABool)
@@ -33,7 +33,7 @@ public class TANot extends TAUnaryFormulae
 			result = new TABool(!(temp.getValue()));
 		}
 	}
-	public TANot(BinaryOperation val)
+	public TANot(TABinaryFormulae val)
 	{
 		operand = val;
 		if(val.result instanceof TABool)
@@ -49,9 +49,9 @@ public class TANot extends TAUnaryFormulae
 			TABool temp = (TABool)operand;
 			result = new TABool(!(temp.getValue()));
 		}
-		else if(operand instanceof UnaryOperation)
+		else if(operand instanceof TAUnaryFormulae)
 		{
-			UnaryOperation temp = (UnaryOperation)operand;
+			TAUnaryFormulae temp = (TAUnaryFormulae)operand;
 			if(temp.result instanceof TABool)
 			{
 				TABool temp1 = (TABool) temp.result;
@@ -59,9 +59,9 @@ public class TANot extends TAUnaryFormulae
 			}
 			
 		}
-		else if(operand instanceof BinaryOperation)
+		else if(operand instanceof TABinaryFormulae)
 		{
-			BinaryOperation temp = (BinaryOperation)operand;
+			TABinaryFormulae temp = (TABinaryFormulae)operand;
 			if(temp.result instanceof TABool)
 			{
 				TABool temp1 = (TABool) temp.result;

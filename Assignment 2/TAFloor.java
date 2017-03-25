@@ -32,7 +32,7 @@ public class TAFloor extends TAUnaryTerm
 	{
 		super.setName(val);
 	}
-	public TAFloor(UnaryOperation val)
+	public TAFloor(TAUnaryTerm val)
 	{
 		operand = val;
 		if(val.result instanceof TAInt)
@@ -46,7 +46,7 @@ public class TAFloor extends TAUnaryTerm
 			result = new TADouble(Math.floor(temp.getValue()));
 		}
 	}
-	public TAFloor(BinaryOperation val)
+	public TAFloor(TABinaryTerm val)
 	{
 		operand = val;
 		if(val.result instanceof TAInt)
@@ -72,9 +72,9 @@ public class TAFloor extends TAUnaryTerm
 			TADouble temp = (TADouble)operand;
 			result = new TADouble(Math.floor(temp.getValue()));
 		}
-		else if(operand instanceof UnaryOperation)
+		else if(operand instanceof TAUnaryTerm)
 		{
-			UnaryOperation temp = (UnaryOperation)operand;
+			TAUnaryTerm temp = (TAUnaryTerm)operand;
 			if(temp.result instanceof TAInt)
 			{
 				TAInt temp1 = (TAInt) temp.result;
@@ -87,10 +87,10 @@ public class TAFloor extends TAUnaryTerm
 			}
 			
 		}
-		else if(operand instanceof BinaryOperation)
+		else if(operand instanceof TABinaryTerm)
 		{
-			
-			BinaryOperation temp = (BinaryOperation)operand;
+
+			TABinaryTerm temp = (TABinaryTerm)operand;
 			if(temp.result instanceof TAInt)
 			{	
 				TAInt temp1 = (TAInt) temp.result;

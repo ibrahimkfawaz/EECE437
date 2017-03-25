@@ -28,7 +28,7 @@ public class TAAnd extends TABinaryFormulae
 	{
 		super.setName(a);
 	}
-	public TAAnd(UnaryOperation op1, UnaryOperation op2)
+	public TAAnd(TABinaryFormulae op1, TABinaryFormulae op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -39,7 +39,7 @@ public class TAAnd extends TABinaryFormulae
 			result = new TABool(temp1.getValue() && temp2.getValue());
 		}
 	}
-	public TAAnd(UnaryOperation op1, TABool op2)
+	public TAAnd(TABinaryFormulae op1, TABool op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -50,7 +50,7 @@ public class TAAnd extends TABinaryFormulae
 			
 		}
 	}
-	public TAAnd(BinaryOperation op1,UnaryOperation op2)
+	public TAAnd(TABinaryFormulae op1,TAUnaryFormulae op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -61,7 +61,7 @@ public class TAAnd extends TABinaryFormulae
 			result = new TABool(temp1.getValue() && temp2.getValue());
 		}
 	}
-	public TAAnd(BinaryOperation op1,TABool op2)
+	public TAAnd(TAUnaryFormulae op1,TABool op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -72,7 +72,7 @@ public class TAAnd extends TABinaryFormulae
 			
 		}
 	}
-	public TAAnd(BinaryOperation op1,BinaryOperation op2)
+	public TAAnd(TAUnaryFormulae op1,TAUnaryFormulae op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -92,10 +92,10 @@ public class TAAnd extends TABinaryFormulae
 			result = new TABool(op1.getValue() && op2.getValue());
 			
 		}
-		else if(operand1 instanceof UnaryOperation && operand2 instanceof UnaryOperation)
+		else if(operand1 instanceof TAUnaryFormulae && operand2 instanceof TAUnaryFormulae)
 		{
-			UnaryOperation op1 = (UnaryOperation)operand1;
-			UnaryOperation op2 = (UnaryOperation)operand2;
+			TAUnaryFormulae op1 = (TAUnaryFormulae)operand1;
+			TAUnaryFormulae op2 = (TAUnaryFormulae)operand2;
 			if(op1.result instanceof TABool && op2.result instanceof TABool)
 			{
 				TABool temp1 = (TABool)op1.result;
@@ -103,9 +103,9 @@ public class TAAnd extends TABinaryFormulae
 				result = new TABool(temp1.getValue() && temp2.getValue());
 			}
 		}
-		else if(operand1 instanceof UnaryOperation && operand2 instanceof TABool)
+		else if(operand1 instanceof TAUnaryFormulae && operand2 instanceof TABool)
 		{
-			UnaryOperation op1 = (UnaryOperation)operand1;
+			TAUnaryFormulae op1 = (TAUnaryFormulae)operand1;
 			TABool op2 = (TABool)operand2;
 			if(op1.result instanceof TABool && op2 instanceof TABool)
 			{
@@ -114,9 +114,9 @@ public class TAAnd extends TABinaryFormulae
 				
 			}
 		}
-		else if(operand1 instanceof BinaryOperation && operand2 instanceof TABool)
+		else if(operand1 instanceof TABinaryFormulae && operand2 instanceof TABool)
 		{
-			BinaryOperation op1 = (BinaryOperation)operand1;
+			TABinaryFormulae op1 = (TABinaryFormulae)operand1;
 			TABool op2 = (TABool)operand2;
 			if(op1.result instanceof TABool && op2 instanceof TABool)
 			{
@@ -125,10 +125,10 @@ public class TAAnd extends TABinaryFormulae
 				
 			}
 		}
-		else if(operand1 instanceof BinaryOperation && operand2 instanceof UnaryOperation)
+		else if(operand1 instanceof TABinaryFormulae && operand2 instanceof TAUnaryFormulae)
 		{
-			BinaryOperation op1 = (BinaryOperation)operand1;
-			UnaryOperation op2 = (UnaryOperation)operand2;
+			TABinaryFormulae op1 = (TABinaryFormulae)operand1;
+			TAUnaryFormulae op2 = (TAUnaryFormulae)operand2;
 			if(op1.result instanceof TABool && op2.result instanceof TABool)
 			{
 				TABool temp1 = (TABool)op1.result;
@@ -137,10 +137,10 @@ public class TAAnd extends TABinaryFormulae
 			}
 			
 		}
-		else if(operand1 instanceof BinaryOperation && operand2 instanceof BinaryOperation)
+		else if(operand1 instanceof TABinaryFormulae && operand2 instanceof TABinaryFormulae)
 		{
-			BinaryOperation op1 = (BinaryOperation)operand1;
-			BinaryOperation op2 = (BinaryOperation)operand2;
+			TABinaryFormulae op1 = (TABinaryFormulae)operand1;
+			TABinaryFormulae op2 = (TABinaryFormulae)operand2;
 			if(op1.result instanceof TABool && op2.result instanceof TABool)
 			{
 				TABool temp1 = (TABool)op1.result;

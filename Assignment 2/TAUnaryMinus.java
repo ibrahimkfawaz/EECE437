@@ -29,7 +29,7 @@ public class TAUnaryMinus extends TAUnaryTerm
 	{
 		super.setName(val);
 	}
-	public TAUnaryMinus(UnaryOperation val)
+	public TAUnaryMinus(TAUnaryTerm val)
 	{
 		operand = val;
 		if(val.result instanceof TAInt)
@@ -43,7 +43,7 @@ public class TAUnaryMinus extends TAUnaryTerm
 			result = new TADouble(temp.getValue());
 		}
 	}
-	public TAUnaryMinus(BinaryOperation val)
+	public TAUnaryMinus(TABinaryTerm val)
 	{
 		operand = val;
 		if(val.result instanceof TAInt)
@@ -69,9 +69,9 @@ public class TAUnaryMinus extends TAUnaryTerm
 			TADouble temp = (TADouble)operand;
 			result = new TADouble(temp.getValue()*-1);
 		}
-		else if(operand instanceof UnaryOperation)
+		else if(operand instanceof TAUnaryTerm)
 		{
-			UnaryOperation temp = (UnaryOperation)operand;
+			TAUnaryTerm temp = (TAUnaryTerm)operand;
 			if(temp.result instanceof TAInt)
 			{
 				TAInt temp1 = (TAInt) temp.result;
@@ -84,10 +84,10 @@ public class TAUnaryMinus extends TAUnaryTerm
 			}
 			
 		}
-		else if(operand instanceof BinaryOperation)
+		else if(operand instanceof TABinaryTerm)
 		{
-			
-			BinaryOperation temp = (BinaryOperation)operand;
+
+			TABinaryTerm temp = (TABinaryTerm)operand;
 			if(temp.result instanceof TAInt)
 			{	
 				TAInt temp1 = (TAInt) temp.result;

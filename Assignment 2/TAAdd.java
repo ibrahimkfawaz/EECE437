@@ -34,7 +34,7 @@ public class TAAdd extends TABinaryTerm
 	{
 		super.setName(a);
 	}
-	public TAAdd(UnaryOperation op1,TAInt op2)
+	public TAAdd(TAUnaryTerm op1,TAInt op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -44,7 +44,7 @@ public class TAAdd extends TABinaryTerm
 			result = new TAInt(temp.getValue()+op2.getValue());
 		}
 	}
-	public TAAdd(UnaryOperation op1,TADouble op2)
+	public TAAdd(TAUnaryTerm op1,TADouble op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -54,7 +54,7 @@ public class TAAdd extends TABinaryTerm
 			result = new TADouble(temp.getValue()+op2.getValue());
 		}
 	}
-	public TAAdd(UnaryOperation op1,UnaryOperation op2)
+	public TAAdd(TAUnaryTerm op1,TAUnaryTerm op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -72,7 +72,7 @@ public class TAAdd extends TABinaryTerm
 			
 		}
 	}
-	public TAAdd(BinaryOperation op1, TAInt op2)
+	public TAAdd(TABinaryTerm op1, TAInt op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -82,7 +82,7 @@ public class TAAdd extends TABinaryTerm
 			result = new TAInt(temp.getValue()+op2.getValue());
 		}
 	}
-	public TAAdd(BinaryOperation op1,TADouble op2)
+	public TAAdd(TABinaryTerm op1,TADouble op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -92,7 +92,7 @@ public class TAAdd extends TABinaryTerm
 			result = new TADouble(temp.getValue()+op2.getValue());
 		}
 	}
-	public TAAdd(BinaryOperation op1,BinaryOperation op2)
+	public TAAdd(TABinaryTerm op1,TABinaryTerm op2)
 	{
 		operand1 = op1;
 		operand2 = op2;
@@ -124,9 +124,9 @@ public class TAAdd extends TABinaryTerm
 			TADouble op2 = (TADouble)operand2;
 			result = new TADouble(op1.getValue() + op2.getValue());
 		}
-		else if(operand1 instanceof UnaryOperation && operand2 instanceof TAInt)
+		else if(operand1 instanceof TAUnaryTerm && operand2 instanceof TAInt)
 		{
-			UnaryOperation op1 = (UnaryOperation)operand1;
+			TAUnaryTerm op1 = (TAUnaryTerm)operand1;
 			TAInt op2 = (TAInt)operand2;
 			if(op1.result instanceof TAInt)
 			{
@@ -134,9 +134,9 @@ public class TAAdd extends TABinaryTerm
 				result = new TAInt(temp.getValue()+op2.getValue());
 			}
 		}
-		else if(operand1 instanceof UnaryOperation && operand2 instanceof TADouble)
+		else if(operand1 instanceof TAUnaryTerm && operand2 instanceof TADouble)
 		{
-			UnaryOperation op1 = (UnaryOperation)operand1;
+			TAUnaryTerm op1 = (TAUnaryTerm)operand1;
 			TADouble op2 = (TADouble)operand2;
 			if(op1.result instanceof TADouble)
 			{
@@ -144,10 +144,10 @@ public class TAAdd extends TABinaryTerm
 				result = new TADouble(temp.getValue()+op2.getValue());
 			}
 		}
-		else if(operand1 instanceof UnaryOperation && operand2 instanceof UnaryOperation)
+		else if(operand1 instanceof TAUnaryTerm && operand2 instanceof TAUnaryTerm)
 		{
-			UnaryOperation op1 = (UnaryOperation)operand1;
-			UnaryOperation op2 = (UnaryOperation)operand2;
+			TAUnaryTerm op1 = (TAUnaryTerm)operand1;
+			TAUnaryTerm op2 = (TAUnaryTerm)operand2;
 			if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 			{
 				TAInt temp1 = (TAInt)op1.result;
@@ -162,9 +162,9 @@ public class TAAdd extends TABinaryTerm
 				
 			}
 		}
-		else if(operand1 instanceof BinaryOperation && operand2 instanceof TAInt)
+		else if(operand1 instanceof TABinaryTerm && operand2 instanceof TAInt)
 		{
-			BinaryOperation op1 = (BinaryOperation)operand1;
+			TABinaryTerm op1 = (TABinaryTerm)operand1;
 			TAInt op2 = (TAInt)operand2;
 			if(op1.result instanceof TAInt)
 			{
@@ -172,9 +172,9 @@ public class TAAdd extends TABinaryTerm
 				result = new TAInt(temp.getValue()+op2.getValue());
 			}
 		}
-		else if(operand1 instanceof BinaryOperation && operand2 instanceof TADouble)
+		else if(operand1 instanceof TABinaryTerm && operand2 instanceof TADouble)
 		{
-			BinaryOperation op1 = (BinaryOperation)operand1;
+			TABinaryTerm op1 = (TABinaryTerm)operand1;
 			TADouble op2 = (TADouble)operand2;
 			if(op1.result instanceof TADouble)
 			{
@@ -182,10 +182,10 @@ public class TAAdd extends TABinaryTerm
 				result = new TADouble(temp.getValue()+op2.getValue());
 			}
 		}
-		else if(operand1 instanceof BinaryOperation && operand2 instanceof BinaryOperation)
+		else if(operand1 instanceof TABinaryTerm && operand2 instanceof TABinaryTerm)
 		{
-			BinaryOperation op1 = (BinaryOperation)operand1;
-			BinaryOperation op2 = (BinaryOperation)operand2;
+			TABinaryTerm op1 = (TABinaryTerm)operand1;
+			TABinaryTerm op2 = (TABinaryTerm)operand2;
 			if(op1.result instanceof TAInt && op2.result instanceof TAInt)
 			{
 				TAInt temp1 = (TAInt)op1.result;

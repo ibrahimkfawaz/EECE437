@@ -29,7 +29,7 @@ public class TACeiling extends TAUnaryTerm
 	{
 		super.setName(a);
 	}
-	public TACeiling(UnaryOperation val)
+	public TACeiling(TAUnaryTerm val)
 	{
 		operand=val;
 		if(val.result instanceof TAInt)
@@ -43,7 +43,7 @@ public class TACeiling extends TAUnaryTerm
 			result = new TADouble(Math.ceil(temp.getValue()));
 		}
 	}
-	public TACeiling(BinaryOperation val)
+	public TACeiling(TABinaryTerm val)
 	{
 		operand = val;
 		if(val.result instanceof TAInt)
@@ -69,9 +69,9 @@ public class TACeiling extends TAUnaryTerm
 			TADouble temp = (TADouble)operand;
 			result = new TADouble(Math.ceil(temp.getValue()));
 		}
-		else if(operand instanceof UnaryOperation)
+		else if(operand instanceof TAUnaryTerm)
 		{
-			UnaryOperation temp = (UnaryOperation)operand;
+			TAUnaryTerm temp = (TAUnaryTerm)operand;
 			if(temp.result instanceof TAInt)
 			{
 				TAInt temp1 = (TAInt) temp.result;
@@ -84,10 +84,10 @@ public class TACeiling extends TAUnaryTerm
 			}
 			
 		}
-		else if(operand instanceof BinaryOperation)
+		else if(operand instanceof TABinaryTerm)
 		{
-			
-			BinaryOperation temp = (BinaryOperation)operand;
+
+			TABinaryTerm temp = (TABinaryTerm)operand;
 			if(temp.result instanceof TAInt)
 			{	
 				TAInt temp1 = (TAInt) temp.result;

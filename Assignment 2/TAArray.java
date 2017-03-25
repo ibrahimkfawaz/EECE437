@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TAArray extends TACompositeType
 {
 	public void list()
@@ -39,7 +41,7 @@ public class TAArray extends TACompositeType
 		}
 		else if(type.equals("Minus"))
 		{
-			elems = new ArrayList<TAMinus>(n);
+			elems = new ArrayList<TAUnaryMinus>(n);
 		}
 		else if(type.equals("Ceiling"))
 		{
