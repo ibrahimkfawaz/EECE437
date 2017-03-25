@@ -1,4 +1,5 @@
-//Root class: all classes derive from it
+//Root class
+//Three classes derive from TAObject: TAElement, TAValue, TAType
 public abstract class TAObject
 {
 	//all objects have a name field, default value of "" to avoid having a null value

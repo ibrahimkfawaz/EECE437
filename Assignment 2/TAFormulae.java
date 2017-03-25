@@ -1,5 +1,5 @@
-public abstract class TAFormulae extends TAObject
+public abstract class TAFormulae extends TAElement
 {
-	protected TABool result;
+	
 }
 

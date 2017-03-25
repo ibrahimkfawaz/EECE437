@@ -1,5 +1,4 @@
-public abstract class TATerm extends TAObject
+public abstract class TATerm extends TAElement
 {
-	protected TAPrimitiveType result;
 
 }
