@@ -23,9 +23,10 @@
 	}
 	
 	public void list(){
-		String s;
-        s="( ceiling " + operand.list();
-		System.out.println(s);
+		System.out.println("( floor ");
+		operand.list();
+		System.out.println(")");
+		System.out.println();
 	}
 
  }

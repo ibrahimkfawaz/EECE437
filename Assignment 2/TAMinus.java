@@ -23,9 +23,10 @@
 	}
 	
 	public void list(){
-		String s;
-        s="( - " + operand.list();
-		System.out.println(s);
+		System.out.println("( Minus ");
+		operand.list();
+		System.out.println(")");
+		System.out.println();
 	}
 
  }
