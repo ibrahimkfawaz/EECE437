@@ -110,10 +110,11 @@ public class TABool extends TAPrimitive
 
 public class TAPair extends TAPrimitive
 {
+	private TAPairValue value;
 
 }
 
 public class TAArray extends TAPrimitive
 {
-
+	private TAArrayValue
 }
