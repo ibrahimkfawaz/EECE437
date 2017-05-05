@@ -12,4 +12,6 @@ public abstract class TAUnaryFormulae extends TAFormulae
 	{
 		operand=op;
 	}
+	public abstract void list();
+	public abstract TAValue evaluate();
 }

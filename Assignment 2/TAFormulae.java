@@ -7,6 +7,6 @@ public abstract class TAFormulae extends TAElement
 		return this.value;
 	}
 	public abstract void list();
-	public abstract void evaluate();
+
 }
 

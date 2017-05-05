@@ -55,7 +55,6 @@ public class TAValue extends TAObject
  	public void assignDivision(TAValue op1, TAValue op2) {  }
 
  	public void assignLessThan(TAValue op1, TAValue op2) {}
-  	public void assignEqual(TAValue op1, TAValue op2) {}
   	public void assignGreaterThan(TAValue op1, TAValue op2) {}
   	public void assignAnd(TAValue op1, TAValue op2) { }
  	public void assignOr(TAValue op1, TAValue op2) { }

@@ -2,32 +2,31 @@
 	 
 	public TACeiling(TADouble operand){
 		 this.operand = operand;
-	 }
+	}
 	 
 	public TACeiling(TAInt operand){
 		  this.operand=operand;
 		 
-	 }
+	}
 	 
 	public TACeiling(TAUnaryTerm operand){
 		  this.operand=operand;
 		 
-	 }
+	}
 	 
 	public TACeiling(TABinaryTerm operand){
 		 this.operand=operand;
 
-	  }
+	}
 	  
-	public void evaluate(){
-		this.value = Math.ceil(operand.evaluate());
-	}
-	
-	public void list(){
-		System.out.println("( ceiling ");
-		operand.list();
-		System.out.println(")");
-		System.out.println();
-	}
+	public TAValue evaluate(){
+		 value.assignCeiling(this.operand.evaluate());
+		 return value;
 
+	}
+	 
+
+	public String operatorSign(){
+		return "Ceiling";
+	}
  }

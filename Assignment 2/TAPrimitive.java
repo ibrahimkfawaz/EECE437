@@ -13,5 +13,8 @@ public abstract class TAPrimitive extends TAElement
 		name = n;
 	}
 	public abstract void list();
+	public TAValue evaluate(){
+		return value;
+	}
 	
 }

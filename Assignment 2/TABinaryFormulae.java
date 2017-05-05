@@ -23,6 +23,5 @@ public abstract class TABinaryFormulae extends TAFormulae
 	{
 		operand2=op;
 	}
-
-
+	
 }

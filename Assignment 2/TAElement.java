@@ -3,7 +3,13 @@
 //Classes deriving from it: TAFormulae(TAValue is Boolean) and TATerm(TAValue is Int/Double)
 
 public abstract class TAElement extends TAObject
-{	
-	public abstract void evaluate(); 
-	
+{
+	protected TAValue value;
+	public abstract TAValue evaluate();
+	public abstract void list();
+	public TAValue getValue()
+	{
+		return this.value;
+	}
+
 }
