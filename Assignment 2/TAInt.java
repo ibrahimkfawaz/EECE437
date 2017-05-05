@@ -23,8 +23,4 @@ public class TAInt extends TAPrimitive
 	{
 		return this.value;
 	}
-	public void setValue(TAIntValue v)
-	{
-		this.value = v;
-	}
 }
