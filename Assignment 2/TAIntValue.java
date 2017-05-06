@@ -1,9 +1,14 @@
+import com.sun.jmx.snmp.agent.SnmpUserDataFactory;
 
 public class TAIntValue extends TAValue
 {
 	private int val;
 	//getter
-	
+
+	public void print(){
+		System.out.print(val);
+	}
+
 	public TAIntValue(int v){this.val = v;}
 	
 	public boolean isInt(){return true;}

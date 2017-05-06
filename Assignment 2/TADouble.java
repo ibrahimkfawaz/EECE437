@@ -1,14 +1,15 @@
 public class TADouble extends TAPrimitive
 {
 
-	private TADoubleValue value;
+//	private TADoubleValue value;
 	public TADouble(double d)
 	{
-		this.value.setDouble(d);
+		value = new TADoubleValue();
+		((TADoubleValue)value).setDouble(d);
 	}
 	public void set(double d)
 	{
-		this.value.setDouble(d);
+		((TADoubleValue)value).setDouble(d);
 	}
 	//constructor for passed string
 	public TADouble(String name)
@@ -22,7 +23,8 @@ public class TADouble extends TAPrimitive
 	}
 	public TADoubleValue getValue()
 	{
-		return this.value;
+
+		return (TADoubleValue) value;
 	}
 	public void setValue(TADoubleValue v)
 	{
@@ -30,6 +32,9 @@ public class TADouble extends TAPrimitive
 	}
 	public TAValue evaluate(){
 		return this.getValue();
+	}
+	public void printstate(){
+		System.out.print(value.getDouble());
 	}
 }
 

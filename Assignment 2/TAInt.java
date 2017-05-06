@@ -1,14 +1,14 @@
 public class TAInt extends TAPrimitive
 {
 
-	public TAInt(int i)
-	{
-		this.value.setValue(i);
-	}
-	public void set(int i)
-	{
-		this.value.setValue(i);
-	}
+//	public TAInt(int i)
+//	{
+//		this.value.setValue(i);
+//	}
+//	public void set(int i)
+//	{
+//		this.value.setValue(i);
+//	}
 	//constructor for passed string
 	public TAInt(String name)
 	{

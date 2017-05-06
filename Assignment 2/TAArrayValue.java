@@ -1,6 +1,8 @@
-public class TAArrayValue extends TAValue
-{
-	private ArrayList<TAValue>;
+import java.util.ArrayList;
 
-	TAArrayValue()
-}
+//public class TAArrayValue extends TAValue
+//{
+//	private ArrayList<TAValue>;
+//
+//	TAArrayValue()
+//}

@@ -11,5 +11,6 @@ public abstract class TAElement extends TAObject
 	{
 		return this.value;
 	}
+//	public void printState
 
 }

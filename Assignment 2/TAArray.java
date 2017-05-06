@@ -1,4 +1,4 @@
-public class TAArray extends TAPrimitive
-{
-	private TAArrayValue
-}
+//public abstract class TAArray extends TAPrimitive
+//{
+//	private TAArrayValue av;
+//}

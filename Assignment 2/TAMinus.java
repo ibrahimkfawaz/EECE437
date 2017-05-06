@@ -17,16 +17,23 @@
 	public TAMinus(TABinaryTerm operand){
 		 this.operand=operand;
 	}
-	  
-	public void evaluate(){
-		this.value = - operand.evaluate();
-	}
-	
-	public void list(){
+
+
+	 @Override
+	 public TAValue evaluate() {
+		 return null;
+	 }
+
+	 public void list(){
 		System.out.println("( Minus ");
 		operand.list();
 		System.out.println(")");
 		System.out.println();
 	}
+
+	 @Override
+	 public String operatorSign() {
+		 return " - ";
+	 }
 
  }
