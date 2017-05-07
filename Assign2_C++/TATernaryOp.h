@@ -4,7 +4,7 @@
 #include "TABinaryOp.h"
 #include <iostream>
 
-struct TATernaryOp : public TABinaryOp {
+struct TATernaryOp : public TATerm {
   TATerm & operand1;
   TATerm & operand2;
   TATerm & operand3;
@@ -21,14 +21,11 @@ struct TATernaryOp : public TABinaryOp {
   virtual TAValue & evaluate() {
     TAValue & val1 = gete1().evaluate();
 	bool e1value = val1.getValue().getBool();
-	if(e1value){
-		TAValue & val2 = gete2().evaluate();
-		return evaluateExecute(val2);
-	}
-	else{
-		TAValue & val3 = gete2().evaluate();
-		return evaluateExecute(val3);
-	}
+	if(e1value)
+		val = gete2().evaluate();
+	else
+		val = gete3().evaluate();
+	return val;
   }
 
   virtual void list( ostream & os) const {
@@ -41,7 +38,12 @@ struct TATernaryOp : public TABinaryOp {
     os << ")";
   }
 
+    virtual const TAType & getType() const {
+    // this is a formula, it returns a boolean type
+    return TAType::getTypeInstance(TA_BOOL);
+  };
+
   // virtual const string operatorSign() const =0;
 
-  virtual TAValue & evaluateExecute(TAValue & val) = 0;
+ // virtual TAValue & evaluateExecute(TAValue & val) = 0;
 };
