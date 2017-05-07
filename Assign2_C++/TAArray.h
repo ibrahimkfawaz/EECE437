@@ -1,7 +1,7 @@
 #pragma once
-#include <TANamedObj.h>
-#include <TAArrayType.h>
-#include <TAArrayValue.h>
+#include "TANamedObj.h"
+#include "TAArrayType.h"
+#include "TAArrayValue.h"
 
 struct TAArray : public TANamedObj {
   TAArrayType & type;

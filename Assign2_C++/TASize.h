@@ -1,6 +1,6 @@
 #pragma once 
-#include <TAUnaryOp.h>
-#include <TAArray.h>
+#include "TAUnaryOp.h"
+#include "TAArray.h"
 
 struct TASize : public TAUnaryOp {
 

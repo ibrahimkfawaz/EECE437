@@ -1,4 +1,4 @@
-#include <TABinaryOp.h>
+#include "TABinaryOp.h"
 
 struct TAEqual : public TABoolBinaryOp {
   TAEqual(TATerm & op1, TATerm & op2) : 

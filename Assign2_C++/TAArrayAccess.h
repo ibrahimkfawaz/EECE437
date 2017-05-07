@@ -1,6 +1,6 @@
 #pragma once
-#include <TABinaryOp.h>
-#include <TAArray.h>
+#include "TABinaryOp.h"
+#include "TAArray.h"
 
 struct TAArrayAccess : public TABinaryOp {
 

@@ -1,9 +1,9 @@
-#include <TAType.h>
-#include <TAIntType.h>
-#include <TABoolType.h>
-#include <TADoubleType.h>
-#include <TAArrayType.h>
-#include <TAPairType.h>
+#include "TAType.h"
+#include "TAIntType.h"
+#include "TABoolType.h"
+#include "TADoubleType.h"
+#include "TAArrayType.h"
+#include "TAPairType.h"
 
 string TAType :: 
 __getTypeString(unsigned int type) {

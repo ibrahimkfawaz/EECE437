@@ -1,4 +1,4 @@
-#include <TABinaryOp.h>
+#include "TABinaryOp.h"
 
 struct TALOr : public TABoolBinaryOp {
   TALOr (TATerm & op1, TATerm & op2) : 

@@ -1,5 +1,5 @@
-#include <iostream> 
-#include <ta.h>
+#include <iostream>
+#include "ta.h"
 using namespace std;
 
 int
@@ -8,6 +8,7 @@ main(int argc, char ** argv) {
   cout << "welcome to the type architecture program." << endl;
 
   cout << "declaring and setting primitive variable." << endl;
+  
   TAInt x("x");
   x.printState(cout);
   x.set(5);
@@ -161,5 +162,9 @@ main(int argc, char ** argv) {
   cout << endl;
   cout << "the type architecture program is exiting gracefully." << endl;
 
+  int j;
+  cin>>j;
   return 0;
+  
+
 }

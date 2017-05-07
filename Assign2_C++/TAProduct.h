@@ -1,4 +1,4 @@
-#include <TABinaryOp.h>
+#include "TABinaryOp.h"
 
 struct TAProduct : public TABinaryOp {
   TAProduct(TATerm & op1, TATerm & op2) : 

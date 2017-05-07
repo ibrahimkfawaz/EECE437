@@ -1,5 +1,5 @@
 #pragma once 
-#include <TABinaryOp.h>
+#include "TABinaryOp.h"
 
 struct TABoolBinaryOp : public TABinaryOp {
 
@@ -8,6 +8,7 @@ struct TABoolBinaryOp : public TABinaryOp {
   {
     val.set(false);
   }
+
   virtual const TAType & getType() const {
     // this is a formula, it returns a boolean type
     return TAType::getTypeInstance(TA_BOOL);
