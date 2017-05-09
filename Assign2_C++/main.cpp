@@ -41,16 +41,16 @@ main(int argc, char ** argv) {
   cout<<endl;
 
   TABool b("b");
-  b.set(true);
+  b.set(false);
   b.printState(cout);
 
   cout<<endl;
 
-  TABool c("c");
-  c.set(true);
-  c.printState(cout);
+//  TABool c("c");
+//  c.set(true);
+ // c.printState(cout);
 
-  cout<<endl;
+//  cout<<endl;
 
   TATernaryOp e(x,h,l);
   e.list(cout);
@@ -59,6 +59,39 @@ main(int argc, char ** argv) {
   e.printState();  
 
   cout<<endl;
+ 
+  TAAssignment assg(x,le);
+  assg.list(cout);
+  cout<<endl;
+
+  TAAssignment assg1(b,le1);
+  assg1.list(cout);
+  cout<<endl;
+
+  TACondition c(x,assg,assg1);
+  c.list(cout);
+  c.evaluate();
+
+  cout<<endl;
+
+  x.printState(cout);
+  b.printState(cout);
+  cout<<endl;
+
+
+  TALoop loop(x,c);
+  loop.list(cout);
+  cout<<endl;
+  loop.evaluate();
+
+  x.printState(cout);
+  b.printState(cout);
+  cout<<endl;
+
+  TAEmptyStmt empty;
+  empty.evaluate();
+  empty.list(cout);
+
   int o;
   cin>>o;
   return 0;
