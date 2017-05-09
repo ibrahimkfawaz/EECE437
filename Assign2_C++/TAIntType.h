@@ -1,6 +1,6 @@
 #pragma once
-#include <TAType.h>
-#include <TAValue.h>
+#include "TAType.h"
+#include "TAValue.h"
 
 struct TAIntType : public TAType {
   TAIntType() {def.set(0);}

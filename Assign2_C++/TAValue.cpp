@@ -1,10 +1,10 @@
-#include <TAValue.h>
-#include <TAValueBase.h>
-#include <TABoolValue.h>
-#include <TAIntValue.h>
-#include <TADoubleValue.h>
-#include <TAArrayValue.h>
-#include <TAArrayType.h>
+#include "TAValue.h"
+#include "TAValueBase.h"
+#include "TABoolValue.h"
+#include "TAIntValue.h"
+#include "TADoubleValue.h"
+#include "TAArrayValue.h"
+#include "TAArrayType.h"
 
 // int based constructor 
 TAValue :: TAValue (int v) : 
@@ -233,6 +233,7 @@ TAValue::assignSelect(TAValue & op1, TAValue & op2){
     TAArrayValue & av = op1.getArrayValue();
     TAValue & vidx = av.values[idx];
     set(vidx);
+	return *this;
 }
 
 //  binary ops

@@ -1,6 +1,6 @@
 #pragma once
-#include <TAValueBase.h>
-#include <TAArrayType.h>
+#include "TAValueBase.h"
+#include "TAArrayType.h"
 
 struct TAArrayValue : public TAValueBase {
   const TAArrayType & type;

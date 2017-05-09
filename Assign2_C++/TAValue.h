@@ -1,6 +1,6 @@
 #pragma once
-#include <TAObj.h>
-#include <iostream>
+#include "TAObj.h"
+#include "iostream"
 using namespace std;
 
 class TAType;
@@ -76,6 +76,7 @@ struct TAValue : public TAObj {
   virtual TAValue & assignEqual(TAValue & op1, TAValue & op2);
   virtual TAValue & assignBiggerThan(TAValue & op1, TAValue & op2);
   virtual TAValue & assignBiggerThanEq(TAValue & op1, TAValue & op2);
+ // virtual TAValue & assignLessThan(TAValue & op1, TAValue & op2);
 
 //  boolean ops
   virtual TAValue & assignLAnd(TAValue & op1, TAValue & op2);

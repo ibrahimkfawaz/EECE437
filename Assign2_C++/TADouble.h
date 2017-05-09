@@ -1,5 +1,5 @@
 #pragma once
-#include <TAPrimitive.h>
+#include "TAPrimitive.h"
 
 struct TADouble : public TAPrimitive {
   TADouble(const string & s) : TAPrimitive (s) {

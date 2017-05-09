@@ -1,5 +1,5 @@
 #pragma once 
-#include <TANamedObj.h>
+#include "TANamedObj.h"
 
 struct TAPrimitive : public TANamedObj {
   TAPrimitive (const string & s) : TANamedObj(s) {}

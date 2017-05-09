@@ -1,6 +1,6 @@
 #pragma once 
-#include <TATerm.h>
-#include <string> 
+#include "TATerm.h"
+#include "string" 
 using namespace std; 
 
 struct TANamedObj : public TATerm {

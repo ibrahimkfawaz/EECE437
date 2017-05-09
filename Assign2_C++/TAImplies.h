@@ -1,4 +1,4 @@
-#include <TABinaryOp.h>
+#include "TABinaryOp.h"
 
 struct TAImplies : public TABoolBinaryOp {
   TAImplies (TATerm & op1, TATerm & op2) : 

@@ -1,6 +1,6 @@
 #pragma once 
-#include <TAValueBase.h>
-#include <TAType.h>
+#include "TAValueBase.h"
+#include "TAType.h"
 
 struct TABoolValue : public TAValueBase {
   bool bValue;

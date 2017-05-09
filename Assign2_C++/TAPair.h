@@ -1,6 +1,6 @@
 #pragma once
-#include <TANamedObj.h>
-#include <TAPairType.h>
+#include "TANamedObj.h"
+#include "TAPairType.h"
 
 struct TAPair : public TANamedObj {
   TAPairType & type;
