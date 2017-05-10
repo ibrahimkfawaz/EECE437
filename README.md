@@ -14,6 +14,6 @@
 
 
 Concerning Assignment 2: 
-
+The directory of the assignment is in the folder Assignment 2.
 The assignment isn't fully done. Most of the features are done though.
 Hopefully assignments 2 and 3 will be submitted in the next couple of days
