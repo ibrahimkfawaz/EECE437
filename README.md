@@ -11,3 +11,9 @@
 2) Design decisions:
 	a) Everything deriving from a single root class removes a lot of the complexity of matching types and tackling different types using a huge number of constructors/functions
 	b) Making decisions inside execution depends on the types and instances of the classes, casting is done inside the constructors depending on the instances of the passed operands
+
+
+Concerning Assignment 2: 
+
+The assignment isn't fully done. Most of the features are done though.
+Hopefully assignments 2 and 3 will be submitted in the next couple of days
